@@ -24,6 +24,7 @@
         "no-console": ["warn", { "allow": ["info", "warn", "error"] }],
         "@typescript-eslint/lines-between-class-members": "off",
         "no-param-reassign": "off",
+        "@typescript-eslint/no-unnecessary-condition": "off",
         "@typescript-eslint/naming-convention": [
             "error",
             {
@@ -31,6 +32,8 @@
                 "format": ["camelCase", "PascalCase", "UPPER_CASE", "snake_case"],
                 "leadingUnderscore": "allow"
             }
-        ]
+        ],
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": "off"
     }
 }

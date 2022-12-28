@@ -1,0 +1,57 @@
+{
+    "root": true,
+    "extends": [
+        "eslint:recommended",
+        "next/core-web-vitals",
+        "plugin:@typescript-eslint/strict",
+        "plugin:jsx-a11y/recommended",
+        "plugin:prettier/recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:tailwindcss/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "project": "./tsconfig.json"
+    },
+    "rules": {
+        "no-undef": "off",
+        "prettier/prettier": "off",
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/no-unnecessary-condition": "off",
+        "@typescript-eslint/prefer-nullish-coalescing": "off",
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": "off",
+        "tailwindcss/classnames-order": [
+            "warn",
+            {
+                "officialSorting": true
+            }
+        ],
+
+        "no-underscore-dangle": "off",
+        "no-alert": "off",
+        "no-nested-ternary": "off",
+        "import/no-extraneous-dependencies": "off",
+        "import/extensions": "off",
+        "import/no-relative-packages": "off",
+        "no-await-in-loop": "off",
+        "no-bitwise": "off",
+        "no-restricted-syntax": "off",
+        "no-console": ["warn", { "allow": ["info", "warn", "error"] }],
+        "@typescript-eslint/lines-between-class-members": "off",
+        "no-param-reassign": "off",
+        "@typescript-eslint/naming-convention": [
+            "error",
+            {
+                "selector": "variable",
+                "format": ["camelCase", "PascalCase", "UPPER_CASE", "snake_case"],
+                "leadingUnderscore": "allow"
+            }
+        ],
+        "@typescript-eslint/dot-notation": "off"
+    }
+}

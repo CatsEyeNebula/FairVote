@@ -19514,6 +19514,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:apps/web"
   dependencies:
+    "@semaphore-protocol/group": ^2.6.1
+    "@semaphore-protocol/identity": ^2.6.1
+    "@semaphore-protocol/proof": ^2.6.1
+    "@semaphore-protocol/subgraph": ^2.6.1
     "@types/node": ^18.11.12
     "@types/react": 18
     "@typescript-eslint/eslint-plugin": ^5.46.0
@@ -19527,9 +19531,11 @@ __metadata:
     eslint-plugin-react: ^7.31.11
     eslint-plugin-react-hooks: ^4.6.0
     eslint-plugin-tailwindcss: ^3.7.1
+    ethers: ^5.7.2
     flowbite: ^1.5.5
     flowbite-react: ^0.3.7
     next: ^13.0.6
+    next-pwa: ^5.6.0
     postcss: ^8.4.19
     prettier: ^2.8.1
     prettier-plugin-organize-imports: ^3.2.1

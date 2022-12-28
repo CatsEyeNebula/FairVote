@@ -1,1 +1,14 @@
-{}
+{
+    "references": [
+        {
+            "path": "apps/contracts"
+        },
+        {
+            "path": "apps/subgraph"
+        },
+        {
+            "path": "apps/web"
+        }
+    ],
+    "exclude": ["node_modules", "dist", "*.d.ts"]
+}

@@ -2,7 +2,7 @@
  * @Author: Nicodemus nicodemusdu@gmail.com
  * @Date: 2022-12-30 15:38:03
  * @LastEditors: Nicodemus nicodemusdu@gmail.com
- * @LastEditTime: 2022-12-31 17:58:31
+ * @LastEditTime: 2023-01-01 12:28:01
  * @FilePath: /FairVote-Fullstack/apps/web/components/mysidebar.tsx
  * @Description:
  *
@@ -86,6 +86,8 @@ const ImageSidebar: React.FC<IDAOSProps> = ({ daos }: IDAOSProps) => {
                             <Avatar key={value.name} img={value.icon} rounded={true} bordered={active === value.name} />
                         </div>
                     );
+                } else {
+                    return;
                 }
             })}
             {/* 当帐号加入的dao总数小于一页可以显示的上限时, 不需要pagination页 */}

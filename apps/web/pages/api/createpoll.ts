@@ -2,7 +2,7 @@
  * @Author: Nicodemus nicodemusdu@gmail.com
  * @Date: 2022-12-28 15:06:06
  * @LastEditors: Nicodemus nicodemusdu@gmail.com
- * @LastEditTime: 2022-12-28 20:02:28
+ * @LastEditTime: 2023-01-01 13:27:18
  * @FilePath: /FairVote-Fullstack/apps/web/pages/api/createpoll.ts
  * @Description:
  *
@@ -36,7 +36,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const { pollId, merkleTreeDepth } = req.body;
 
     try {
-        const vote = await contract.createPoll(pollId, signer.address, merkleTreeDepth);
+        const vote = await contract['createPoll'](pollId, signer.address, merkleTreeDepth);
 
         await vote.wait();
 

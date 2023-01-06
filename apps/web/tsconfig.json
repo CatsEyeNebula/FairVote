@@ -32,5 +32,5 @@
         "target": "ESNext"
     },
     "exclude": [".next", "node_modules", "../../node_modules"],
-    "include": [".next/types/**/*.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"]
+    "include": [".next/types/**/*.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx", "utils/wallet.js", "utils/wallet.js"]
 }

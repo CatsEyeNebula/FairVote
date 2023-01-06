@@ -16,11 +16,14 @@ import { useAccount } from '../context/AccountContext';
 import { useSidebarContext } from '../context/SidebarContext';
 import IAccount from '../types/IAccount';
 import getAddressDisplay from '../utils/addressDisplay';
+import metamask from '../utils/wallet';
 
 interface ITag {
     name: string;
     url: string;
 }
+
+
 
 // 这里定义导航栏的标签和对应的url
 const tags = [
@@ -42,6 +45,7 @@ const Header: FC<Record<string, never>> = function () {
     const [activeTag, setActiveTag] = useState('');
     const pathName = usePathname();
     // 监控pathName, 当路径不是导航栏对应的路径时, 取消导航栏的选中状态
+
     useEffect(() => {
         const result = tags.filter((value) => {
             return pathName?.startsWith(value.url);
@@ -170,19 +174,23 @@ const Header: FC<Record<string, never>> = function () {
                                         <Button
                                             className='mx-auto px-16'
                                             onClick={async () => {
+                                                //连接钱包，返回用户地址
+                                                const address = metamask.connectWallet()
+                                                //检测当前是否在正确的链上，不是则会提示换链
+                                                metamask.checkIfRightChain()
                                                 // 模拟返回faker数据
                                                 const res = await fetch('api/getAccount', {
                                                     method: 'POST',
                                                     headers: { 'Content-Type': 'application/json' },
                                                     body: JSON.stringify({
-                                                        address: '0x167Ebb3a501726b8dC04674A9A5B39784f6ac601',
+                                                        address: address,
                                                     }),
                                                 });
 
-                                                if (res.status === 200) {
+                                                if (address !== null) {
                                                     const result = (await res.json()) as IAccount;
-                                                    accountContext.setAddress(result.address);
-                                                    accountContext.setAvatar(result.avatar);
+                                                    accountContext.setAddress(await address);
+                                                    // accountContext.setAvatar(result.avatar);
                                                     accountContext.setDAOs(result.daos);
                                                     accountContext.setIsLogin(true);
                                                     setOpenConnect(false);

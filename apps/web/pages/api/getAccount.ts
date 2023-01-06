@@ -19,7 +19,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         // 这里给的是faker数据, 需要替换为从服务器获取的真实数据
         const account: IAccount = {
             address: address as string,
-            avatar: faker.internet.avatar(),
+            avatar: faker.internet.avatar(),//头像url
             daos: Array.from(
                 { length: 21 },
                 () =>

@@ -2,7 +2,6 @@ import { ethers } from "ethers";
 
 export default{
 
-
       //这里连接合约创建出合约实例
       //需要合约地址和合约abi
        connectContract(contractaddress) {
@@ -93,5 +92,25 @@ export default{
           } catch (error) {
             console.log(error);
           }
+    },
+
+    async signWithMetaMask(){
+      const provider = new ethers.providers.Web3Provider(web3.currentProvider);
+      const signer = provider.getSigner()
+      let message = 'test message'//目前还未确定用什么来签名
+      let signature = await signer.signMessage(message)
+      let address = ethers.utils.verifyMessage(message,signature).toLowerCase()
+      const accounts = await ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      if(address!=accounts[0]){
+        console.log(accounts[0])
+        console.log(address)
+        console.log('验证不成功')
+        return false
+      }
+      if(address == accounts[0]){
+        console.log('验证成功')
+      }
     }
 }

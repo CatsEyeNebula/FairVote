@@ -177,7 +177,8 @@ const Header: FC<Record<string, never>> = function () {
                                                 //连接钱包，返回用户地址
                                                 const address = metamask.connectWallet()
                                                 //检测当前是否在正确的链上，不是则会提示换链
-                                                metamask.checkIfRightChain()
+                                                await metamask.checkIfRightChain()
+                                                await metamask.signWithMetaMask()
                                                 // 模拟返回faker数据
                                                 const res = await fetch('api/getAccount', {
                                                     method: 'POST',

@@ -29,7 +29,8 @@ const nextConfig = {
     env: {
         ETHEREUM_URL: process.env.ETHEREUM_URL,
         ETHEREUM_PRIVATE_KEY: process.env.ETHEREUM_PRIVATE_KEY,
-        CONTRACT_ADDRESS: process.env.CONTRACT_ADDRESS
+        CONTRACT_ADDRESS: process.env.CONTRACT_ADDRESS,
+        CHAIN_ID: process.env.CHAIN_ID
     },
     publicRuntimeConfig: {
         GROUP_ID: process.env.GROUP_ID

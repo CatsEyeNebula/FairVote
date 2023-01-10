@@ -190,7 +190,7 @@ const Header: FC<Record<string, never>> = function () {
 
                                                 if (address !== null) {
                                                     const result = (await res.json()) as IAccount;
-                                                    accountContext.setAddress(await address);
+                                                    accountContext.setAddress(await address as string);
                                                     // accountContext.setAvatar(result.avatar);
                                                     accountContext.setDAOs(result.daos);
                                                     accountContext.setIsLogin(true);
